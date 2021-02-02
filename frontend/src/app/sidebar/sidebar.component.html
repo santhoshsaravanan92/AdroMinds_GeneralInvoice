@@ -1,0 +1,85 @@
+<div style="width: 100%;">
+  <div class="float-left" style="width: 14%; position: fixed;">
+    <!-- <img class="logo" src="./assets/images/logo.jpg" alt="logo" srcset="" /> -->
+    <div class="logo" style="background-color: #222;"></div>
+    <div class="sidebar-design">
+      <ul>
+        <li id="menubardashboard">
+          <a (click)="componentSelector('dashboard')">
+            <img class="menu-icon" src="../../assets/icons/dashboard.png" />
+            Dashboard
+          </a>
+        </li>
+        <li id="menubartemplate">
+          <a (click)="componentSelector('template')">
+            <img class="menu-icon" src="./assets/icons/product.png" />
+            Template
+          </a>
+        </li>
+        <li id="menubarInvoice">
+          <a (click)="componentSelector('invoice')">
+            <img class="menu-icon" src="./assets/icons/invoice.png" />
+            Invoice
+          </a>
+        </li>
+        <li id="menubarCustomer">
+          <a (click)="componentSelector('customer')">
+            <img class="menu-icon" src="./assets/icons/profile.png" />
+            Customer
+          </a>
+        </li>
+        <li id="menubarExpense">
+          <a (click)="componentSelector('expense')">
+            <img class="menu-icon" src="./assets/icons/sales.png" />
+            Expense
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="float-right" style="width: 86%; display: grid;">
+    <div class="shadow height">
+      <div class="float-left company-name">
+        {{ companyName }}
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">
+          <img class="float-right rounded user-img" src="../../assets/images/user_dummy.jpg" alt="profile picture">
+        </button>
+        <div class="dropdown-content">
+          <div class="user-menu-content username" *ngIf="!isAssistantLoggedIn">{{ username }}</div>
+          <hr class="break" *ngIf="!isAssistantLoggedIn" />
+          <div class="user-menu-content cursor-pointer" (click)="componentSelector('profile')">Profile</div>
+          <!-- <div class="user-menu-content cursor-pointer" (click)="componentSelector('settings')">Settings</div> -->
+          <div class="user-menu-content cursor-pointer underline" (click)="logout()">Logout</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <!-- 
+      Content of the other components based on the user selection.  
+      Needs to find the best way to do so.
+    -->
+
+      <div *ngIf="componentToLoad === 'profile'">
+        <app-profile class="margin-left"></app-profile>
+      </div>
+      <div *ngIf="componentToLoad === 'dashboard'">
+        <app-dashboard class="margin-left"></app-dashboard>
+      </div>
+      <div *ngIf="componentToLoad === 'customer'">
+        <app-customer></app-customer>
+      </div>
+      <div *ngIf="componentToLoad === 'invoice'">
+        <!-- <app-settings-base></app-settings-base> -->
+        <app-invoice></app-invoice>
+      </div>
+      <div *ngIf="componentToLoad === 'template'">
+        <app-templates></app-templates>
+      </div>
+      <div *ngIf="componentToLoad === 'expense'">
+        <app-expense></app-expense>
+      </div>
+    </div>
+  </div>
+</div>
