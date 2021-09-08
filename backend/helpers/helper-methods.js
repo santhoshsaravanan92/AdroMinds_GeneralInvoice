@@ -35,3 +35,12 @@ exports.changeDateFormatyyyymmdd = (d) => {
 	const splittedDate = d.split('/');
 	return (splittedDate[2] + "-" + splittedDate[1] + "-" + splittedDate[0]);
 };
+
+exports.changeDateFormatmmddyyyy = (d) => {
+	
+	const splittedDate = d.split('/');
+	if(splittedDate[0]>12)
+	{
+	return (splittedDate[1] + "-" + splittedDate[0] + "-" + splittedDate[2]);
+	}
+};

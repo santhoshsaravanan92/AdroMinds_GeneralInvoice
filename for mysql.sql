@@ -71,3 +71,16 @@ CREATE TABLE invoice_product(
 	modified_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
 	ON UPDATE CURRENT_TIMESTAMP   
 );
+
+CREATE TABLE expense(
+	id int AUTO_INCREMENT primary key,	
+	dated date not null, 
+	category varchar(25) not null, 
+	price decimal not null, 
+	notes varchar(50) not null, 
+	isactive bit default 1,
+	owner_email varchar(50) references personalinformation(Email),
+	created_date timestamp default current_timestamp,
+	modified_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
+	ON UPDATE CURRENT_TIMESTAMP   
+);

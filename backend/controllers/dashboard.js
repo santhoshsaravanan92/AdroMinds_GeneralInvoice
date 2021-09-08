@@ -3,9 +3,9 @@ const {
     validateHeader
 } = require('../helpers/helper-methods');
 
-// const {
-//     getExpenseDetailsForDashboard
-// } = require('../models/expense');
+const {
+    getExpenseDetailsForDashboard
+} = require('../models/expense');
 
 const {
     getInvoiceDetailsForDashboard

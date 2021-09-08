@@ -39,6 +39,9 @@ import { InvoiceFiltersComponent } from "./invoice/invoice-filters/invoice-filte
 import { AllinvoicesComponent } from "./invoice/allinvoices/allinvoices.component";
 import { InvoiceModalComponent } from "./invoice/invoice-modal/invoice-modal.component";
 import { CalendarModule } from "primeng/calendar";
+import { ExpenseComponent } from "./expense/expense.component";
+import { ExpenseModelComponent } from "./expense/expense-model/expense-model.component";
+import { ExpenseService } from "./expense/services/expense.service";
 
 @NgModule({
   declarations: [
@@ -59,6 +62,8 @@ import { CalendarModule } from "primeng/calendar";
     InvoiceFiltersComponent,
     AllinvoicesComponent,
     InvoiceModalComponent,
+    ExpenseComponent,
+    ExpenseModelComponent
   ],
   imports: [
     BrowserModule,
@@ -89,6 +94,7 @@ import { CalendarModule } from "primeng/calendar";
     MessageService,
     LoggedInGuardian,
     ConfirmationService,
+    ExpenseService
   ],
 })
 export class AppModule {}
